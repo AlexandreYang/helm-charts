@@ -55,3 +55,19 @@ clusterAgent:
            url: http://example.net
          - name: 'Check Example Site3'
            url: http://example.net
+
+  ## @param datadog-cluster.yaml - object - optional
+  ## Specify custom contents for the datadog cluster agent config (datadog-cluster.yaml).
+  #
+  datadog_cluster_yaml:
+
+    # snmp_listener: https://github.com/DataDog/datadog-agent/blob/master/pkg/config/config_template.yaml#L433-L562
+    snmp_listener:
+      workers: 2
+      discovery_interval: 10
+      configs:
+        - network: 10.0.0.0/24
+          version: 1
+          community: public
+    listeners:
+      - name: snmp
