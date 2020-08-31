@@ -102,7 +102,7 @@ datadog:
   ## Autodiscovery via Kube Service annotations is automatically enabled
   #
   clusterChecks:
-    enabled: false
+    enabled: true
 
   ## @param nodeLabelsAsTags - list of key:value strings - optional
   ## Provide a mapping of Kubernetes Node Labels to Datadog Tags.
@@ -575,13 +575,11 @@ clusterAgent:
   ## ref: https://docs.datadoghq.com/agent/autodiscovery/
   #
   confd:
-     mysql.yaml: |-
+     http_check.yaml: |-
        cluster_check: true
        instances:
-         - server: 'test'
-           port: 3306
-           user: datadog
-           pass: '<YOUR_CHOSEN_PASSWORD>'
+         - name: 'Check Example Site'
+           url: http://example.net
 
   ## @param resources - object -required
   ## Datadog cluster-agent resource requests and limits.
