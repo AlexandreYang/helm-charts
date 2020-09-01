@@ -158,6 +158,35 @@ clusterAgent:
       configs:
         - network: 192.168.1.16/29
           version: 2
-          community: public
+          port: 1161
+          community: cisco_icm
+        - network: 192.168.1.16/29
+          version: 2
+          port: 1161
+          community: f5
+        - network: 192.168.1.16/29
+          version: 2
+          port: 1161
+          community: network
+        - network: 192.168.1.16/29
+          version: 2
+          port: 1161
+          community: 3850
+        - network: 192.168.1.16/29
+          version: 2
+          port: 1161
+          community: meraki-cloud-controller
+        - network: 192.168.1.16/29
+          version: 2
+          port: 1161
+          community: idrac
+        - network: 192.168.1.16/29
+          version: 2
+          port: 1161
+          community: cisco_nexus
+        - network: 192.168.1.16/29
+          version: 2
+          port: 1161
+          community: dell-poweredge
     listeners:
       - name: snmp
