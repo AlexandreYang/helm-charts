@@ -46,6 +46,15 @@ clusterAgent:
   ## ref: https://docs.datadoghq.com/agent/autodiscovery/
   #
   confd:
+     http_check.yaml: |-
+       cluster_check: true
+       instances:
+         - name: 'Check Example Site1'
+           url: http://example.net
+         - name: 'Check Example Site2'
+           url: http://example.net
+         - name: 'Check Example Site3'
+           url: http://example.net
      snmp.yaml: |-
       cluster_check: true
       ad_identifiers:
