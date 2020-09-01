@@ -46,15 +46,6 @@ clusterAgent:
   ## ref: https://docs.datadoghq.com/agent/autodiscovery/
   #
   confd:
-     http_check.yaml: |-
-       cluster_check: true
-       instances:
-         - name: 'Check Example Site1'
-           url: http://example.net
-         - name: 'Check Example Site2'
-           url: http://example.net
-         - name: 'Check Example Site3'
-           url: http://example.net
      snmp.yaml: |-
       cluster_check: true
       ad_identifiers:
@@ -155,7 +146,7 @@ clusterAgent:
       discovery_interval: 10
       configs:
         - network: 192.168.1.16/29
-          version: 1
+          version: 2
           community: public
     listeners:
       - name: snmp
