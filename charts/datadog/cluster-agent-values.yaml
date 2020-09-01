@@ -46,6 +46,7 @@ clusterAgent:
   ## ref: https://docs.datadoghq.com/agent/autodiscovery/
   #
   confd:
+     # Static checks
      http_check.yaml: |-
        cluster_check: true
        instances:
@@ -55,6 +56,7 @@ clusterAgent:
            url: http://example.net
          - name: 'Check Example Site3'
            url: http://example.net
+     # Autodiscovery template needed for snmp_listener to work
      snmp.yaml: |-
       cluster_check: true
       ad_identifiers:
